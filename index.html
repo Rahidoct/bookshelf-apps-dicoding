@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookshelf Apps</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Bookshelf</h1>
+    <form>
+      <input class="form-control" type="text" id="bookTitle" name="" placeholder="Cari Bukumu Disini...">
+    </form>
+  </header>
+
+  <div class="add-book">
+    <button id="openModal" class="btn btn-primary add-book">Tambah Buku</button>
+  </div>
+
+  <div class="grid-book">   
+
+    <div class="row-book">
+      <h2 class="container-header">Belum Dibaca: <span id="unread-book"></span></h2>
+      <div class="list-item" id="isComplete-false"></div>
+    </div>
+
+    <div class="row-book">
+      <h2 class="container-header">Sudah Dibaca: <span id="read-book"></span></h2>
+      <div class="list-item" id="isComplete-true"></div>
+    </div>
+  </div>
+
+  <div class="no-list"></div>
+
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title">Tambah Buku Baru</h2>
+          <button class="close" id="closeModal" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form class="form" action="#" id="form">
+            <div class="form-group">
+              <input type="text" id="title" name="title" required placeholder="Judul Buku" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="text" id="author" name="author" required placeholder="Author" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="date" id="date" name="date" required class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary" id="btn-submit">Simpan Buku</button>
+            <button type="button" class="btn btn-danger" id="btn-reset">Hapus List</button>
+            <div class="jmlh-book">
+              <h3>Jumlah Buku:</h3>
+              <h4 id="total-books"></h4>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    const openModalBtn = document.getElementById('openModal');
+    const closeModalBtn = document.getElementById('closeModal');
+    const modal = document.getElementById('myModal');
+
+    openModalBtn.addEventListener('click', function() {
+      modal.style.display = 'block';
+    });
+
+    closeModalBtn.addEventListener('click', function() {
+      modal.style.display = 'none';
+    });
+  </script>
+  <script src="main.js"></script>
+</body>
+</html>
